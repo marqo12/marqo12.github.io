@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="woda.css">
+    <title>WODA </title>
+</head>
+<body>
+<div id="główny">    
+    <div id="gora"> woda źródlana</div>
+    <div id="prawo"> <img src="las.jpg" width="600" height="500">  </div>
+    <div id="lewo">    
+       <div id="formularz"> Oferta handlowa :   <table>
+            <tr>
+               <td>woda żywiec</td> <td>1,50zł/1,5l</td> 
+            </tr>
+            <tr>
+               <td>woda muszynianka</td> <td>1,70zł/1,5l</td> 
+            </tr>
+            <tr>
+               <td>woda cisowianka</td> <td>1,55zł/1,5l</td> 
+            </tr>
+         </table> Formularz Zakupów:
+            <p>
+               <form name='formularz'>
+                  <BR>
+                  <label for='typ'>Wybierz rodzaj wody: </label>
+                  <select id='typ' name='typ'>
+                  <option value='A'>Bonaqua 2 zl   </option>
+                  <option value='B'>Kropla 3 zl    </option>
+                  <option value='C'>Cisowianka 4 zl</option>
+                  <option value='D'>Kranowa 5 zl   </option>
+                  </select>
+                  <BR>
+                  
+                  <label for='ilosc'>Ile butelek? </label>
+                  <input type='number' id='ilosc' name='ilosc'>
+                  <BR>
+                  <input type='button' value='Oblicz' onclick="oblicz()">
+                  </form>
+                  <BR>
+                  
+                  Wynik:
+                  <p id='wynik'+ zł></p>
+                  
+                  <script>
+                  function oblicz(){
+                  var wynik=0;
+                  var typ=document.forms['formularz']['typ'].value;
+                  var ilosc=document.forms['formularz']['ilosc'].value;
+                  if(typ=='A')
+                  {
+                  wynik+=2*ilosc;
+                  }
+                  else if(typ=='B')
+                  {
+                  wynik+=3*ilosc;
+                  }
+                  else if(typ=='C')
+                  {
+                  wynik+=4*ilosc;
+                  }
+                  else if(typ=='D')
+                  {
+                  wynik+=5*ilosc;
+                  }
+                  
+                  document.getElementById('wynik').innerHTML=wynik;
+                  }
+                  </script>
+                  
+        </div> </div>
+    <div id="dol">Franciszek karamon  
+       
+    </div>
+</div> 
+</body>
+</html>
